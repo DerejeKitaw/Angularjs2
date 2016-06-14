@@ -1,0 +1,10 @@
+// Place your settings in this file to overwrite the default settings
+//File->Preference->UserSettings
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true
+    },
+    "files.autoSave":"afterDelay"
+}
