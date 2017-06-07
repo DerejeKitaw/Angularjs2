@@ -10,3 +10,13 @@
 
 <p [myHighlight]="color">Highlight me! with my color yellow</p>
 <p myHighlight>Highlight me! with default red</p>
+
+<h4>Pick a highlight color</h4>
+<div>
+  <input type="radio" name="color" (click)="color='lightgreen'">Green
+  <input type="radio" name="color" (click)="color='yellow'">Yellow
+  <input type="radio" name="color" (click)="color='cyan'">Cyan
+</div>
+
+<p [myHighlight]="color" >Highlight me !</p>
+<p [myHighlight]="color" defaultColor="violet">Highlight me !</p>

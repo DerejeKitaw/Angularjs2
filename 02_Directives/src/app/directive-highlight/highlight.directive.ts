@@ -14,11 +14,14 @@ export class HighlightDirective {
   // pass value into the directive
   @Input('myHighlight') highlightColor: string;
 
+  @Input() defaultColor: string;
+
+
   @HostListener('mouseenter') onMouseEnter() {
     console.log('mouseEnter');
     console.log(this.highlightColor);
     // if color is null or not defined use red to hightlight
-    this.highlight(this.highlightColor || 'red');
+    this.highlight(this.highlightColor || this.defaultColor || 'red');
   }
   // @HostListener('mousedown') onMouseDawn() {
   //   console.log('mouseDawn');
