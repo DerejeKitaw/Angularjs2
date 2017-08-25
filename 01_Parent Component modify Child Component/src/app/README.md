@@ -47,9 +47,14 @@ References:
 
 ```bash
 # parent.component.ts
+import { Component, ViewChild } from '@angular/core';
 import { UserProfile } from '../user-profile';
 
-// ViewChild takes a class type or a reference name string.
+@Component({
+  template: '<user-profile (click)="update()"></user-profile>',
+})
+export class MasterPage {
+  // ViewChild takes a class type or a reference name string.
   // Here we are using the type
   @ViewChild(UserProfile) userProfile: UserProfile
 
@@ -63,24 +68,38 @@ import { UserProfile } from '../user-profile';
   update() {
     this.userProfile.sendData();
   }
+}
+
 ```
 We can also do the same thing with a local variable. Instead of trying to load the particular class, we can do:
 
 ```bash
-# parent.component.ts
+# MasterPage.component.ts `parent`
+import { Component, ViewChild } from '@angular/core';
 import { UserProfile } from '../user-profile';
 
-@ViewChild('myProfile') userProfile: UserProfile
+@Component({
+  template: '<user-profile #myProfile (click)="update()"></user-profile>'
+})
+export class MasterPage {
+  @ViewChild('myProfile') userProfile: UserProfile
   constructor() { }
   update(){
     this.userProfile.sendData();
   }
+}
 ```
 ```bash
-# child.component.ts
+# UserProfile.component.ts  `child`
 
-constructor() {}
+@Component({
+  selector: 'user-profile'
+})
+
+export class UserProfile {
+  constructor() {}
   sendData() {
     //send data
   }
+}
 ```
