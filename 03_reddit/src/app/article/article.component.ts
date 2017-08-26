@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { Article } from './article.model';
 
 @Component({
@@ -9,17 +9,13 @@ import { Article } from './article.model';
 export class ArticleComponent implements OnInit {
   // Add class="row"
   @HostBinding('attr.class') cssClass ='row';
-  article:Article;
+  @Input() article: Article;   
+
 
   constructor() {
-    this.article = new Article(
-      'Angular 4',
-      'http://angular.io',
-      10
-
-    );
-
-   }
+    // article is populated by the Input now,
+    // so we don't need anything here
+  }
 voteUp(){
   this.article.votes+=1;
   return false; // to avoid relode of the page

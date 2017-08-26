@@ -182,3 +182,82 @@ export class Article {
 
 ```
 
+```bash
+# The reason we have a voteUp() and a voteDown() on both classes is because each function does a slightly different thing. 
+
+# The idea is that the voteUp() on the ArticleComponent relates to the component view, whereas the Article model voteUp() defines what mutations happenin the model. 
+```
+
+```bash
+# update article.component.html
+
+{{ article.title }}
+{{ article.title }}
+
+```
+
+```bash
+# move article data from article component to app component
+
+# app.component.ts
+
+import { Component } from '@angular/core';
+import { Article } from './article/article.model';
+
+@Component({
+  selector: 'reddit-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'reddit';
+  articles:Article[]; //<-- component property 
+  constructor() {
+    this.articles=[
+       new Article('Angular 4','http://angular.io',2),
+       new Article('Fullstack','http://dkitaw.com',3),
+       new Article('Angular Homepage','http://angular.io',1)
+    ];
+
+   }
+
+  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    return false;
+  }
+}
+
+```
+
+```bash
+# Display link in the article component Eg. http://angular.io ->
+"angular.io"
+good place to put this is in the article.module.ts
+
+  domain(): string {
+    try {
+      // e.g. http://angular.io/path/to/bar
+      // link =http://angular.io
+      // link.split('//')[0]=http:
+      // domain=link.split('//')[1]=angular.io/path/to/bar
+        // domain.split('/')[0]=angular.io
+        // domain.split('/')[1]=path
+        // domain.split('/')[2]=bar
+      const domainAndPath: string = this.link.split('//')[1];
+      // e.g. foo.com/path/to/bar
+      return domainAndPath.split('/')[0];
+    } catch (err) {
+      return null;
+    }
+  }
+
+```
+
+```bash
+# use it in the article.component.html
+
+ <div>({{article.domain()}})</div>
+
+ will result in (angular.io) in the output
+
+```
