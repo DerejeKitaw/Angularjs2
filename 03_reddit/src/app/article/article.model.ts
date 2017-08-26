@@ -4,8 +4,8 @@ export class Article {
     votes:number;
 
     constructor (title:string, link: string, votes?:number){
-        this.title=title;
-        this.link=link;
+        this.title=title || 'Untitled';
+        this.link=link || 'http://angular.io';
         this.votes=votes || 0; //default 0 and optional
     }
 // return domai of link

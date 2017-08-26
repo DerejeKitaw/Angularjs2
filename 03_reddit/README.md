@@ -261,3 +261,16 @@ good place to put this is in the article.module.ts
  will result in (angular.io) in the output
 
 ```
+## Add article from the form
+```bash
+# create add article function in app component
+
+addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    this.articles.push(new Article(title.value,link.value,0));
+    title.value='';
+    link.value='';
+    return false;
+  }
+
+```
