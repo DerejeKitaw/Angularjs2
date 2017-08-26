@@ -164,3 +164,21 @@ ng g c article --dry
 ng g class article/article.model --dry
 
 ```
+
+```bash
+# update articleModel
+
+export class Article {
+    title: string;
+    link: string;
+    votes:number;
+
+    constructor (title:string, link: string, votes?:number){
+        this.title=title;
+        this.link=link;
+        this.votes=votes || 0; //default 0 and optional
+    }
+}
+
+```
+

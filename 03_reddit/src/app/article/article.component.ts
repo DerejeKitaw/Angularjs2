@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Article } from './article.model';
 
 @Component({
   selector: 'reddit-article',
@@ -8,24 +9,24 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 export class ArticleComponent implements OnInit {
   // Add class="row"
   @HostBinding('attr.class') cssClass ='row';
-  
-  votes: number;
-  title:string;
-  link:string;
+  article:Article;
 
   constructor() {
-    this.title='Angular 4';
-    this.link='http://dkitaw.com';
-    this.votes=10;
+    this.article = new Article(
+      'Angular 4',
+      'http://angular.io',
+      10
+
+    );
 
    }
 voteUp(){
-  this.votes+=1;
+  this.article.votes+=1;
   return false; // to avoid relode of the page
 }
 
 voteDown(){
-  this.votes -= 1;
+  this.article.votes -= 1;
   return false;
 }
   ngOnInit() {
