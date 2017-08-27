@@ -1,4 +1,10 @@
-<p>
-  product-row works!
-</p>
 <inventory-app-product-image [product]="product"></inventory-app-product-image>
+<div class="content">
+  <div class="header">
+    {{product.name}}
+  </div>
+  <div class="meta">
+      <div class="product-sku">SKU #{{ product.sku }}</div>
+    </div>
+   
+</div>
