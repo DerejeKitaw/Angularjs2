@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "inventory-app",
       "styles": [
+        "assets/vendor/semantic.min.css",
         "styles.scss"
       ],
       "scripts": [],
