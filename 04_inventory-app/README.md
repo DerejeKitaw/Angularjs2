@@ -2,7 +2,7 @@
 
 ```bash
 # Create product.model.ts
-
+ng g class product.module --dry
 
 
 ```
@@ -15,5 +15,24 @@
 
 ```bash
 # import product images to asset folder
+
+```
+
+```bash
+# creat product list component
+ng g c product-list --dry
+
+
+```
+
+```bash
+# Create Product row component
+ng g c product-row --dry
+
+```
+
+```bash
+# Create product image component
+ng g c product-image --dry
 
 ```
