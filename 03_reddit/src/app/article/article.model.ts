@@ -19,4 +19,5 @@ export class Article {
           return null;
         }
       }
+
 }

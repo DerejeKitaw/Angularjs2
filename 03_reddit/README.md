@@ -274,3 +274,18 @@ addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
   }
 
 ```
+## Sort Articles by vote
+```bash
+# change app component take articles from sorted articles
+
+<div class="ui grid posts">
+    <reddit-article *ngFor="let article of sortedArticles()"
+    [article]="article"></reddit-article>
+</div>
+
+# define sortedArticles() in appComponent
+
+  sortedArticles(){
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);          
+  }
+```
