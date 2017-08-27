@@ -7,6 +7,12 @@ import { Product } from '../product.model';
   styleUrls: ['./product-image.component.scss']
 })
 export class ProductImageComponent implements OnInit {
+  /**
+   * ProductImageComponent displays all images
+   * product.imageUrl - is url of image location
+   * @property product - all product array
+   *                   
+   */
   @Input() product: Product;
   @HostBinding('attr.class') cssClass = 'ui small image';
   constructor() { }

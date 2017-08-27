@@ -6,10 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./price-display.component.scss']
 })
 export class PriceDisplayComponent implements OnInit {
-/**
- * @PriceDisplay: A component to show the price of a
- * Product
- */
+ /**
+   * @property price - price come from hosting component
+   *                   [price]="value of price to be desplayed in this component"
+   */
   @Input() price:number;
 
   constructor() { }

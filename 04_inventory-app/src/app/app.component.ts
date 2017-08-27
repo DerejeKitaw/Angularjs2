@@ -7,6 +7,16 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+   /**
+   * AppComponent 
+   *  - displays all products by assing one product at a time to ProductRowComponent
+   *  - contains
+   *         ProductRowComponent      - to display product
+   *                      
+   *                      
+   * @property products    - all products defined in the constructor
+   *                   
+   */
   products : Product[];
 
   constructor(){

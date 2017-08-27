@@ -7,6 +7,16 @@ import { Product } from '../product.model';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  
+  /**
+   * ProductListComponent - displays all products in a row using ProductRowComponent
+   *                      - contain ProductRowComponent
+   *                      - pass single product to ProductRowComponent one by one using "ngFor"
+   *                      
+   * @property productList - array of all products
+   *                   
+   */
+
   @Input() productList: Product[];
   constructor() { }
 
