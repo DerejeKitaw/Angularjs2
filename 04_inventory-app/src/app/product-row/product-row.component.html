@@ -6,5 +6,8 @@
   <div class="meta">
       <div class="product-sku">SKU #{{ product.sku }}</div>
     </div>
-   
+    <div class="description">
+      <inventory-app-product-department [product]="product"></inventory-app-product-department>
+    </div>
 </div>
+<inventory-app-price-display [price]="product.price"></inventory-app-price-display>

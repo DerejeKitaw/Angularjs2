@@ -44,3 +44,13 @@ ng g c product-row --dry
 ng g c product-image --dry
 
 ```
+```bash
+# Create product department component
+ng g c product-department --dry
+
+```
+```bash
+# Create price-display component
+ng g c price-display --dry
+
+```
