@@ -2,6 +2,7 @@
     <inventory-app-product-row 
     *ngFor="let myProduct of productList"
     [product]="myProduct"
+    (click)='clicked(myProduct)'
     >
     </inventory-app-product-row >
 </div>

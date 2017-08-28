@@ -54,3 +54,8 @@ ng g c product-department --dry
 ng g c price-display --dry
 
 ```
+
+```bash
+# Add click events to each product to identify selected product
+
+```

@@ -8,9 +8,9 @@ import { Product } from '../product.model';
 })
 export class ProductImageComponent implements OnInit {
   /**
-   * ProductImageComponent displays all images
-   * product.imageUrl - is url of image location
-   * @property product - all product array
+   * ProductImageComponent: - to show a single Product's image
+   * product.imageUrl       - is url of image location
+   * @Input product         - single product
    *                   
    */
   @Input() product: Product;
