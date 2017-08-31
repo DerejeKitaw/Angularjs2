@@ -3,12 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule } from './app.routing';
+import { ErrorComponent } from './error/error.component';
+import { NavComponent } from './nav/nav.component';
+import { AdminModule } from './admin/admin.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorComponent,
+    NavComponent
+
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AdminModule,  // must be befor AppRoutingModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

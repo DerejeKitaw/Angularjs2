@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-menu.component.css']
 })
 export class AdminMenuComponent implements OnInit {
-
+  title = 'Admin Menu'
   constructor() { }
 
   ngOnInit() {
