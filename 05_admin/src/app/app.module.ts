@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app.routing';
 import { ErrorComponent } from './error/error.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminModule } from './admin/admin.module';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { AdminModule } from './admin/admin.module';
     
   ],
   imports: [
+    
     BrowserModule,
     AdminModule,  // must be befor AppRoutingModule
     AppRoutingModule

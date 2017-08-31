@@ -7,6 +7,8 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserService } from './admin-common/user.service';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../../environments/environment';
 
 const AdminRoutes: Routes =[
   {
@@ -23,6 +25,7 @@ const AdminRoutes: Routes =[
 
 @NgModule({
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     CommonModule,
     FormsModule,
     RouterModule.forChild(AdminRoutes)
