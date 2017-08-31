@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { AdminModule } from './admin/admin.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     
-    BrowserModule,
     AdminModule,  // must be befor AppRoutingModule
-    AppRoutingModule
+    BrowserModule,
+    AppRoutingModule ,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

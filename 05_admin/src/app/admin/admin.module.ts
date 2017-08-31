@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserService } from './admin-common/user.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../environments/environment';
+import { BrowserModule } from '@angular/platform-browser';
 
 const AdminRoutes: Routes =[
   {
@@ -25,9 +26,10 @@ const AdminRoutes: Routes =[
 
 @NgModule({
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),
-    CommonModule,
     FormsModule,
+    CommonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
     RouterModule.forChild(AdminRoutes)
   ],
   exports:[
