@@ -3,7 +3,8 @@ import { RouterModule } from '@angular/router';
 
 
 import { HomeComponent } from './home/home.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './shared/error/error.component';
+
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
@@ -14,8 +15,11 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     RouterModule.forRoot([
-      {path:'', component: HomeComponent},
-      {path:'**', component: ErrorComponent},
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'login', loadChildren: './admin/login/login.module#LoginModule' },
+      { path: 'user', loadChildren: './user/user.module#UserModule' },
+      { path: '**', pathMatch: 'full', component: ErrorComponent }
 
     ])
   ],

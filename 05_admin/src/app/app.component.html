@@ -1,2 +1,5 @@
-<app-nav></app-nav>
+<a [routerLink]="[ '/home' ]">Home</a>
+<a *ngIf="!user" [routerLink]="[ '/login' ]">Login</a>
+<a *ngIf="user" [routerLink]="[ '/user' ]">User profile</a>
+<a *ngIf="user" [routerLink]="[ '/login' ]" (click)="logout()">Logout</a>
 <router-outlet></router-outlet>
