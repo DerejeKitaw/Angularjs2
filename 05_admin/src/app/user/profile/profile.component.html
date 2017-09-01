@@ -1,0 +1,5 @@
+<div *ngIf="userProfile$">
+  <pre>
+    {{userProfile$ | async | json}}
+  </pre>
+</div>
